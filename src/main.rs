@@ -27,7 +27,11 @@ fn main() {
     // println!("filename={:?}", opt.filename);
     match process(&opt) {
         Ok(()) => {
-            println!("process success")
+            if opt.hide {
+                println!("hide success")
+            } else {
+                println!("show success")
+            }
         },
         Err(e) => {
             eprintln!("error process: {}", e);
